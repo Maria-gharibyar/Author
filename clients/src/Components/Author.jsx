@@ -2,6 +2,7 @@ import { useState } from "react";
 import axios from 'axios';
 import { Link } from 'react-router-dom'
 const Author = (props) => {
+   
     const { authorsName, setAuthorsName } = props;
     const [firstname, setFirstname] = useState('');
 
@@ -15,7 +16,7 @@ const Author = (props) => {
             console.log(res.data);
             setAuthorsName([...authorsName, res.data]); 
         })
-        .catch(err => console.log(err));
+        
     }
     
     return (

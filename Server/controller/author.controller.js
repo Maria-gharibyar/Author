@@ -22,3 +22,18 @@ module.exports.getAuthor=(request,response)=>{
 
     
 }
+module.exports.findAndUpdateAuthor=(request,response)=>{
+        authorController.findOneAndUpdate({_id: request.params.id},request.body,{new:true})
+        .then(updateAuthor=>response.json(updateAuthor))
+        .catch(err=>response.status(400).json(err))
+}
+module.exports.getOne=(request,response)=>{
+    authorController.findOne({_id: request.params.id})
+    .then(getOneAuthor=>response.json(getOneAuthor))
+    .catch(err=>response.status(400).json(err))
+}
+module.exports.deleteAuthor=(request,response)=>{
+    authorController.deleteOne({_id:request.params.id})
+    .then(deleteAuthor=>response.json(deleteAuthor))
+    .catch(err => response.json(err))
+}

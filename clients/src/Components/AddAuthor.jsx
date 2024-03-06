@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 
 const AddAuthor = () => {
-    const [error, setError] = useState({}); // Initialize error state as an empty object
+    const [error, setError] = useState({}); 
     const [NewAuthor, setNewAuthor] = useState({
         firstname: ""
     });
@@ -16,7 +16,7 @@ const AddAuthor = () => {
             })
             .catch(err => {
                 console.log(err);
-                setError(err.response.data.errors); // Set error state
+                setError(error.response.data.errors); 
             });
     }
 
