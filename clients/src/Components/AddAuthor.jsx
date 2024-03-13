@@ -31,7 +31,7 @@ const AddAuthor = () => {
                 <input type="text" value={NewAuthor.firstname} onChange={(e) => setNewAuthor({ ...NewAuthor, firstname: e.target.value })} />
                 <input type="submit" value="Create" />
             </form>
-            <Link to="/home">Home</Link>
+            <Link to="/home">Welcom Home</Link>
         </div>
     );
 }
